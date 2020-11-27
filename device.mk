@@ -16,10 +16,10 @@
 #
 
 # Inherit from the proprietary version
-$(call inherit-product, vendor/lenovo/A6020/A6020-vendor.mk)
+$(call inherit-product, vendor/oppo/A37/A37-vendor.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += device/lenovo/A6020/overlay
+DEVICE_PACKAGE_OVERLAYS += device/oppo/A37/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -364,7 +364,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.android.dateformat=MM-dd-yyyy \
     persist.sys.disable_rescue=true \
     ro.setupwizard.rotation_locked=true \
-    ro.com.google.clientidbase=android-lenovo \
+    ro.com.google.clientidbase=android-oppo \
     ro.adb.secure=0 \
     net.tethering.noprovisioning=true \
     ro.storage_manager.enabled=true

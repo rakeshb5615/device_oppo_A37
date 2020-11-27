@@ -12,7 +12,7 @@ persist.vendor.audio.fluence.voicerec=true
 ro.audio.flinger_standbytime_ms=300
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
-ro.vendor.audio.sdk.fluencetype=fluence
+ro.vendor.audio.sdk.fluencetype=none
 ro.vendor.audio.sdk.ssr=false
 vendor.audio.dolby.ds2.enabled=true
 vendor.audio.tunnel.encode=false
@@ -144,10 +144,10 @@ ro.vendor.qti.sys.fw.trim_cache_percent=100
 ro.vendor.qti.sys.fw.trim_enable_memory=1073741824
 
 # Play store
-ro.com.google.clientidbase.am=android-lenovo
-ro.com.google.clientidbase.gmm=android-lenovo
-ro.com.google.clientidbase.ms=android-lenovo
-ro.com.google.clientidbase.yt=android-lenovo
+ro.com.google.clientidbase.am=android-oppo
+ro.com.google.clientidbase.gmm=android-oppo
+ro.com.google.clientidbase.ms=android-oppo
+ro.com.google.clientidbase.yt=android-oppo
 
 # Radio
 DEVICE_PROVISIONED=1

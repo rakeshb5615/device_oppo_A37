@@ -16,9 +16,9 @@
 #
 
 # Inherit from the proprietary version
-include vendor/lenovo/A6020/BoardConfigVendor.mk
+include vendor/oppo/A37/BoardConfigVendor.mk
 
-LOCAL_PATH := device/lenovo/A6020
+LOCAL_PATH := device/oppo/A37
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
@@ -51,7 +51,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := A6020,A6020a40,A6020a41,A6020a46,A6020l36,A6020l37,K32c36,k5,k5_plus,vibe_k5
+TARGET_OTA_ASSERT_DEVICE := a37f,A37f,A37fw,a37fw,msm8916,msm8939
 
 # Audio
 AUDIO_FEATURE_DEEP_BUFFER_RINGTONE := true
@@ -77,7 +77,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := A6020
+TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -134,20 +134,23 @@ DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 HWUI_COMPILE_FOR_PERF := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_A6020
-TARGET_RECOVERY_DEVICE_MODULES := libinit_A6020
+TARGET_INIT_VENDOR_LIB := libinit_msm8916
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 pm.sleep_mode=1 loop.max_part=7
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk ramoops.mem_address=0x9ff00000 ramoops.mem_size=0x400000 ramoops.record_size=0x40000
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += androidboot.btmacaddr=00:00:00:00:00:00
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_SOURCE := kernel/lenovo/msm8916
-TARGET_KERNEL_CONFIG := A6020_defconfig
+BOARD_MKBOOTIMG_ARGS += --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+BOARD_KERNEL_IMAGE_NAME := Image
+TARGET_KERNEL_SOURCE := kernel/oppo/A37
+BOARD_KERNEL_SEPARATED_DT := true
+TARGET_KERNEL_ARCH := arm64
+TARGET_CUSTOM_DTBTOOL := dtbToolOppo
+TARGET_KERNEL_CONFIG := lineageos_a37f_defconfig
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -156,10 +159,10 @@ TARGET_PROVIDES_LIBLIGHT := true
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432        # 32768 * 1024 # mmcblk0p22
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432    # 32768 * 1024 # mmcblk0p26
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560    # 2621440 * 1024 # mmcblk0p23
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12211698688 # 11925487 * 1024 # mmcblk0p30
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2859466752    # 2621440 * 1024 # mmcblk0p23
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11632902144 # 11925487 * 1024 # mmcblk0p30
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432     # 32768 * 1024 # mmcblk0p24
-BOARD_CACHEIMAGE_PARTITION_SIZE := 265289728
+BOARD_CACHEIMAGE_PARTITION_SIZE := 126877696
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ROOT_EXTRA_FOLDERS := firmware persist
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -184,11 +187,11 @@ TARGET_USES_OLD_MNC_FORMAT := true
 
 # SELinux
 #include device/qcom/sepolicy-legacy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += device/lenovo/A6020/sepolicy
-BOARD_SEPOLICY_DIRS += device/lenovo/A6020/sepolicy_tmp
+#BOARD_SEPOLICY_DIRS += device/oppo/A37/sepolicy
+BOARD_SEPOLICY_DIRS += device/oppo/A37/sepolicy_tmp
 
 # System properties
-TARGET_SYSTEM_PROP += device/lenovo/A6020/system.prop
+TARGET_SYSTEM_PROP += device/oppo/A37/system.prop
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
