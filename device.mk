@@ -84,9 +84,7 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libshim_camera \
     libcamera_shim \
-    Camera2 \
-    Snap \
-    SnapdragonCamera
+    Snap
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
