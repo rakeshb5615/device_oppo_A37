@@ -138,8 +138,8 @@ PRODUCT_PACKAGES += \
     libfmjni
 
 # Firmware patch
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/move_files.sh:install/bin/move_files.sh
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/move_files.sh:install/bin/move_files.sh
 
 # GPS
 PRODUCT_PACKAGES += \
