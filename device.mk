@@ -81,14 +81,16 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8916 \
-    libbson \
-    libshim_gui \
-    libshim_atomic \
-    Camera2
+    libshim_camera \
+    libcamera_shim \
+    Camera2 \
+    Snap \
+    SnapdragonCamera
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    camera.device@3.2-impl
+    android.hardware.camera.provider@2.4-service \
+    camera.device@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:system/etc/external_camera_config.xml
@@ -175,9 +177,7 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-ext-common_system \
-    ims_ext_common.xml \
-    libshims_boringssl \
-    libshims_ims
+    ims_ext_common.xml
 
 PRODUCT_BOOT_JARS += \
     ims-ext-common_system
