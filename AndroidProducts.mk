@@ -15,9 +15,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_A37.mk
+    $(LOCAL_DIR)/lineage_A37.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_A37-userdebug \
-    aosp_A37-eng \
-    aosp_A37-user
+    lineage_A37-userdebug \
+    lineage_A37-eng \
+    lineage_A37-user
