@@ -15,15 +15,15 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_l_mr1.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_k.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from A37 device
 $(call inherit-product, device/oppo/A37/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := A37
-PRODUCT_NAME := aosp_A37
+PRODUCT_NAME := lineage_A37
 PRODUCT_BRAND := Oppo
 PRODUCT_MODEL := A37
 PRODUCT_MANUFACTURER := Oppo
