@@ -174,6 +174,7 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
     camera.device@1.0-impl \
     libshim_camera \
     libcamera_shim \
@@ -297,8 +298,9 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml
+    $(LOCAL_PATH)/configs/media_codecs_8929.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8929.xml \
+    $(LOCAL_PATH)/configs/media_codecs_8939.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8939.xml \
+    $(LOCAL_PATH)/configs/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
 # Permissions
 PRODUCT_COPY_FILES += \
